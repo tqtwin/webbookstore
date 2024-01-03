@@ -1,0 +1,67 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.container{max-width: 100%;}
+#background {
+    position: relative;
+    overflow: hidden;
+    /* Đảm bảo nội dung không bị tràn khi kích thước màn hình thấp */
+}
+#background img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(70%);
+}
+
+#background h1,
+#background p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+#background h1 {
+    font-size: 85px;
+}
+
+#background p {
+    font-size: 30px;
+}
+
+.bg2 {
+    width: 100%;
+    height: 300px;
+    background-color: #7f7f7f;
+}
+
+@media screen and (max-width: 768px) {
+    #background {
+        height: auto;
+        /* Đảm bảo chiều cao tự động khi xem trên thiết bị nhỏ */
+    }
+
+    #background img {
+        height: auto;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        /* Đảm bảo chiều cao tự động khi xem trên thiết bị nhỏ */
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "section"
+            "content"
+            "footer";
+    }
+}
